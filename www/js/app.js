@@ -50,7 +50,7 @@ var app = {
 		FB.init(
 		{
 			appId				: '1434579543483455',
-			//nativeInterface		: CDV.FB,
+			nativeInterface		: CDV.FB,
 			useCachedDialogs	: false,
 			status				: false
 		});
