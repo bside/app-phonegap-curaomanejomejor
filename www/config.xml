@@ -26,6 +26,7 @@
 	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.3.3" />
 	<gap:plugin name="org.apache.cordova.media" version="0.2.8" />
 	<gap:plugin name="org.apache.cordova.splashscreen" version="0.2.7" />
+	<preference name="android-licenseKey" value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjFYyV8byERHQRol7YORYTAa/gncEK+cXs6WST0varSayUDdjM/qzmWA26MN3Z3MYuX6M42CQ7Cwkbr+XJ0wJBPpqvUV5JKC7/rCOfSXXBVfyzRoPgN0H59M7skLeqbwIgqR1EbemQvajcsmLPAK9+g2Sm7fJjuH+FlSFLZHQ6vjmUOoSqSzaNNk2TL4vugYXH5S2Mizf2UQAC543arC7TkszNcTwuA9W3iixAKmj62MyeeVwvKUBJ/bXrR20R4weTwht3+X9R9/30UVIs9p4V7okoXyNAgSuyhklKqYMySlWJW5fEP50u06q3pxVAsHelZo0H6rPZ44wzGccR8uxnwIDAQAB" />
 
 	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.4.0">
 		<param name="APP_ID" value="1434579543483455" />
