@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="cl.brandon.curaomanejomejor" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+	<name>¿Cura'o Manejo Mejor?</name>
+	<description>TomoElControl.cl - ¿Cura'o Manejo Mejor?</description>
+	<author email="desarrollo@brandon.cl" href="http://brandon.cl">BrandOn | Inconsciente Digital</author>
+	<preference name="phonegap-version" value="3.5.0" />
+	<preference name="permissions" value="none" />
+	<preference name="orientation" value="portrait" />
+	<preference name="target-device" value="universal" />
+	<preference name="fullscreen" value="true" />
+	<preference name="webviewbounce" value="true" />
+	<preference name="prerendered-icon" value="true" />
+	<preference name="stay-in-webview" value="false" />
+	<preference name="ios-statusbarstyle" value="black-opaque" />
+	<preference name="detect-data-types" value="true" />
+	<preference name="exit-on-suspend" value="true" />
+	<preference name="show-splash-screen-spinner" value="true" />
+	<preference name="auto-hide-splash-screen" value="true" />
+	<preference name="disable-cursor" value="false" />
+	<preference name="android-minSdkVersion" value="7" />
+	<preference name="android-installLocation" value="auto" />
+
+	<gap:plugin name="org.apache.cordova.console" version="0.2.7" />
+	<gap:plugin name="org.apache.cordova.device" version="0.2.8" />
+	<gap:plugin name="org.apache.cordova.dialogs" version="0.2.6" />
+	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.3.3" />
+	<gap:plugin name="org.apache.cordova.media" version="0.2.8" />
+	<gap:plugin name="org.apache.cordova.splashscreen" version="0.2.7" />
+
+	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.4.0">
+		<param name="APP_ID" value="1434579543483455" />
+		<param name="APP_NAME" value="Localhost Facebook Login" />
+	</gap:plugin>
+	<gap:platform name="android" />
+	<!--<gap:platform name="ios" />-->
+
+	<icon src="icon.png" />
+	<icon src="icon-128.png" width="128" height="128" />
+	<icon src="icon-256.png" width="256" height="256" gap:role="default" />
+
+	<!--
+	<gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
+	<gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="res/screen/android/screen-mdpi-portrait.png" />
+	<gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="res/screen/android/screen-hdpi-portrait.png" />
+	<gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="res/screen/android/screen-xhdpi-portrait.png" />
+	-->
+
+	<access origin="*" />
+</widget>
