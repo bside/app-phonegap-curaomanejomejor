@@ -34,7 +34,7 @@
 	<gap:platform name="android" />
 	<!--<gap:platform name="ios" />-->
 
-	<icon src="icon.png" />
+	<icon src="icon-128.png" />
 	<icon src="icon-128.png" width="128" height="128" />
 	<icon src="icon-256.png" width="256" height="256" gap:role="default" />
 

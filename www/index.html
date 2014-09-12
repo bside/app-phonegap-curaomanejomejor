@@ -35,23 +35,10 @@
 
 		<script src="cordova.js"></script>
 		<script src="js/watch.min.js"></script>
-		<script src="js/require.min.js"></script>
+		<script src="http://connect.facebook.net/es_LA/all.js"></script>
+		<script src="js/app.js"></script>
 		<script>
-		require.config(
-		{
-			baseUrl		: 'js',
-			shim		: {
-				facebook	: { exports: 'FB' }
-			},
-			paths		:
-			{
-				facebook	: 'http://connect.facebook.net/es_LA/all'
-			}
-		});
-		require(['app'], function(app)
-		{
-			app.init();
-		});
+		app.init();
 		</script>
 
 		<script src="js/jquery-2.0.0.min.js"></script>
