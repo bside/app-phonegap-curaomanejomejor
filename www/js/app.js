@@ -95,7 +95,8 @@ var app = {
 	login			: function(scope)
 	{
 		estado.loginPending			= 1;
-		FB._nativeInterface.login(function(response)
+		//FB._nativeInterface.login(function(response)
+		FB.login(function(response)
 		{
 			if ( response.authResponse )
 			{
@@ -110,12 +111,13 @@ var app = {
 		},
 		{
 			scope: scope || 'email'
-		},
+		}
+		/*,
 		function()
 		{
 			estado.loginCancel			= 1;
 			estado.loginPending			= 0;
-		});
+		}*/);
 	},
 
 	/**
