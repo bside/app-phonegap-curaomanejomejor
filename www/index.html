@@ -38,10 +38,6 @@
 		<script src="cordova.js"></script>
 		<script src="js/watch.min.js"></script>
 		<script src="js/app.js"></script>
-		<script>
-		app.init();
-		</script>
-
 		<script src="js/jquery-2.0.0.min.js"></script>
 		<script src="js/c2runtime.js"></script>
 		<script>
@@ -52,6 +48,7 @@
 
 		document.addEventListener('deviceready', function()
 		{
+			app.init();
 			window['c2isphonegap']		= true;
 			cr_createRuntime('c2canvas');
 
