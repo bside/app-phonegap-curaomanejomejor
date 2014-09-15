@@ -1,7 +1,7 @@
 /* jshint bitwise:true, browser:true, eqeqeq:true, forin:true, globalstrict:true, indent:4, jquery:true,
    loopfunc:true, maxerr:3, noarg:true, node:true, noempty:true, onevar: true, quotmark:single,
    strict:true, undef:true, white:false */
-/* global */
+/* global FB, CDV, watch*/
 
 /*!
  * TOMO EL CONTROL - APP FB
@@ -16,7 +16,7 @@
 /**
  * Estado app
  */
-var status			= {
+var estado			= {
 		init			: 0,
 		event			: {
 			statusChange	: 0,
@@ -34,6 +34,19 @@ var status			= {
 			first_name		: '',
 			last_name		: '',
 			email			: ''
+		},
+		puntajesOk		: 0,
+		puntajes		: {
+			0	: { nombre: '', puntaje: '' },
+			1	: { nombre: '', puntaje: '' },
+			2	: { nombre: '', puntaje: '' },
+			3	: { nombre: '', puntaje: '' },
+			4	: { nombre: '', puntaje: '' },
+			5	: { nombre: '', puntaje: '' },
+			6	: { nombre: '', puntaje: '' },
+			7	: { nombre: '', puntaje: '' },
+			8	: { nombre: '', puntaje: '' },
+			9	: { nombre: '', puntaje: '' }
 		}
 	};
 
@@ -54,7 +67,7 @@ var app = {
 			useCachedDialogs	: false,
 			status				: false
 		});
-		status.init			= 1;
+		estado.init			= 1;
 	},
 
 	/**
@@ -64,15 +77,15 @@ var app = {
 	{
 		FB.Event.subscribe('auth.statusChange', function()
 		{
-			status.event.statusChange		= 1;
+			estado.event.statusChange		= 1;
 		});
 		FB.Event.subscribe('auth.login', function()
 		{
-			status.event.login				= 1;
+			estado.event.login				= 1;
 		});
 		FB.Event.subscribe('auth.logout', function()
 		{
-			status.event.logout				= 1;
+			estado.event.logout				= 1;
 		});
 	},
 
@@ -81,27 +94,27 @@ var app = {
 	 */
 	login			: function(scope)
 	{
-		status.loginPending			= 1;
+		estado.loginPending			= 1;
 		FB._nativeInterface.login(function(response)
 		{
 			if ( response.authResponse )
 			{
-				status.logged			= 1;
+				estado.logged			= 1;
 				this.info();
 			}
 			else
 			{
-				status.loginCancel		= 1;
+				estado.loginCancel		= 1;
 			}
-			status.loginPending		= 0;
+			estado.loginPending		= 0;
 		},
 		{
 			scope: scope || 'email'
 		},
-		function(e)
+		function()
 		{
-			status.loginCancel			= 1;
-			status.loginPending			= 0;
+			estado.loginCancel			= 1;
+			estado.loginPending			= 0;
 		});
 	},
 
@@ -114,16 +127,16 @@ var app = {
 		{
 			if ( response.status === 'connected' )
 			{
-				status.logged			= 1;
+				estado.logged			= 1;
 				this.info();
 			}
 			else if ( response.status === 'not_authorized' )
 			{
-				status.logged			= 0;
+				estado.logged			= 0;
 			}
 			else
 			{
-				status.logged			= 0;
+				estado.logged			= 0;
 			}
 		}, true);
 	},
@@ -141,19 +154,24 @@ var app = {
 		{
 			if ( ! response || response.error )
 			{
-				status.user.error			= 1;
+				estado.user.error			= 1;
 			}
 			else
 			{
-				status.user.error			= 0;
-				status.user.id				= response.id;
-				status.user.name			= response.name;
-				status.user.first_name		= response.first_name;
-				status.user.last_name		= response.last_name;
-				status.user.email			= response.email;
+				estado.user.error			= 0;
+				estado.user.id				= response.id;
+				estado.user.name			= response.name;
+				estado.user.first_name		= response.first_name;
+				estado.user.last_name		= response.last_name;
+				estado.user.email			= response.email;
 			}
 
-			// TODO: guardar usuario
+			$.post('http://www.appsbrandon.cl/tomoelcontrol/tab-curadomanejomejor/juego/facebook.php',
+			{
+				facebook_id		: response.id,
+				nombre			: response.name,
+				email			: response.email
+			});
 		});
 	},
 
@@ -162,10 +180,10 @@ var app = {
 	 */
 	logout			: function()
 	{
-		status.loggedOut		= 0;
+		estado.loggedOut		= 0;
 		FB.logout(function()
 		{
-			status.loggedOut		= 1;
+			estado.loggedOut		= 1;
 		});
 	},
 
@@ -207,9 +225,9 @@ var app = {
 	 */
 	watch			: function()
 	{
-		watch(status, function()
+		watch(estado, function()
 		{
-			app.storage(status, 'status');
+			app.storage(estado, 'estado');
 		});
 	},
 
@@ -222,7 +240,7 @@ var app = {
 		{
 			if ( typeof(obj[x]) === 'object' )
 			{
-				this.storage(obj[x], 'status.' + x);
+				this.storage(obj[x], name + '.' + x);
 			}
 			else
 			{
@@ -239,8 +257,34 @@ var app = {
 	 */
 	puntaje			: function(tiempo)
 	{
-		// TODO: guardar puntaje
 		tiempo		= tiempo || 0;
+		if ( estado.user.id !== 0 )
+		{
+			$.post('http://www.appsbrandon.cl/tomoelcontrol/tab-curadomanejomejor/juego/facebook.php',
+			{
+				facebook_id		: estado.user.id,
+				puntaje			: tiempo
+			});
+		}
+	},
+
+	/**
+	 * Obtiene los puntajes y los guarda en localStorage
+	 */
+	puntajes		: function()
+	{
+		$.getJSON('http://www.appsbrandon.cl/tomoelcontrol/tab-curadomanejomejor/juego/facebook.php?puntajes', function(data)
+		{
+			for ( var x in data )
+			{
+				if ( data.hasOwnProperty(x) )
+				{
+					estado.puntajes[x].nombre		= data[x].nombre;
+					estado.puntajes[x].puntaje		= data[x].puntaje;
+				}
+			}
+			estado.puntajesOk		= Math.random();
+		});
 	}
 };
 

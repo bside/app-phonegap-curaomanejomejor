@@ -1,50 +1,77 @@
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="cl.brandon.curaomanejomejor" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="cl.brandon.curaomanejomejor" version="1.0.0"
+		xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+
+	<!-- INFO APP -->
 	<name>¿Cura'o Manejo Mejor?</name>
 	<description>TomoElControl.cl - ¿Cura'o Manejo Mejor?</description>
 	<author email="desarrollo@brandon.cl" href="http://brandon.cl">BrandOn | Inconsciente Digital</author>
-	<preference name="phonegap-version" value="3.5.0" />
-	<preference name="permissions" value="none" />
-	<preference name="orientation" value="portrait" />
-	<preference name="target-device" value="universal" />
-	<preference name="fullscreen" value="true" />
-	<preference name="webviewbounce" value="true" />
-	<preference name="prerendered-icon" value="true" />
-	<preference name="stay-in-webview" value="false" />
-	<preference name="ios-statusbarstyle" value="black-opaque" />
-	<preference name="detect-data-types" value="true" />
-	<preference name="exit-on-suspend" value="true" />
-	<preference name="show-splash-screen-spinner" value="true" />
-	<preference name="auto-hide-splash-screen" value="true" />
-	<preference name="disable-cursor" value="false" />
-	<preference name="android-minSdkVersion" value="7" />
-	<preference name="android-installLocation" value="auto" />
 
+	<!-- GLOBAL -->
+	<preference name="phonegap-version" value="3.5.0" />
+	<preference name="orientation" value="portrait" />
+	<preference name="fullscreen" value="true" />
+	<preference name="permissions" value="none" />
+
+	<!-- DEBUG -->
+	<!--
+	<feature name="debug-server" required="true">
+		<param name="domain" value="http://192.168.2.199:8080" />
+		<param name="key" value="anonymous" />
+	</feature>
+	-->
+
+	<!-- PLATAFORMAS -->
+	<gap:platform name="android" />
+	<!--<gap:platform name="ios" />-->
+
+	<!-- ANDROID -->
+	<preference name="android-minSdkVersion" value="14" />
+	<preference name="android-targetSdkVersion" value="17" />
+	<supports-screens
+		android:anyDensity="true"
+		android:resizeable="true"
+		android:smallScreens="true"
+		android:normalScreens="true"
+		android:largeScreens="false"
+		android:xlargeScreens="false" />
+	<preference name="android-installLocation" value="preferExternal" />
+	<preference name="android-licenseKey" value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjFYyV8byERHQRol7YORYTAa/gncEK+cXs6WST0varSayUDdjM/qzmWA26MN3Z3MYuX6M42CQ7Cwkbr+XJ0wJBPpqvUV5JKC7/rCOfSXXBVfyzRoPgN0H59M7skLeqbwIgqR1EbemQvajcsmLPAK9+g2Sm7fJjuH+FlSFLZHQ6vjmUOoSqSzaNNk2TL4vugYXH5S2Mizf2UQAC543arC7TkszNcTwuA9W3iixAKmj62MyeeVwvKUBJ/bXrR20R4weTwht3+X9R9/30UVIs9p4V7okoXyNAgSuyhklKqYMySlWJW5fEP50u06q3pxVAsHelZo0H6rPZ44wzGccR8uxnwIDAQAB" />
+
+	<!-- IOS -->
+	<!--
+	<preference name="target-device" value="handset" />
+	<preference name="prerendered-icon" value="true" />
+	<preference name="detect-data-types" value="false" />
+	<preference name="exit-on-suspend" value="true" />
+	<preference name="deployment-target" value="7.0" />
+	<preference name="ios-statusbarstyle" value="black-opaque" />
+	-->
+
+	<!-- PLUGINS -->
 	<gap:plugin name="org.apache.cordova.console" version="0.2.7" />
 	<gap:plugin name="org.apache.cordova.device" version="0.2.8" />
 	<gap:plugin name="org.apache.cordova.dialogs" version="0.2.6" />
 	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.3.3" />
 	<gap:plugin name="org.apache.cordova.media" version="0.2.8" />
 	<gap:plugin name="org.apache.cordova.splashscreen" version="0.2.7" />
-	<preference name="android-licenseKey" value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjFYyV8byERHQRol7YORYTAa/gncEK+cXs6WST0varSayUDdjM/qzmWA26MN3Z3MYuX6M42CQ7Cwkbr+XJ0wJBPpqvUV5JKC7/rCOfSXXBVfyzRoPgN0H59M7skLeqbwIgqR1EbemQvajcsmLPAK9+g2Sm7fJjuH+FlSFLZHQ6vjmUOoSqSzaNNk2TL4vugYXH5S2Mizf2UQAC543arC7TkszNcTwuA9W3iixAKmj62MyeeVwvKUBJ/bXrR20R4weTwht3+X9R9/30UVIs9p4V7okoXyNAgSuyhklKqYMySlWJW5fEP50u06q3pxVAsHelZo0H6rPZ44wzGccR8uxnwIDAQAB" />
-
 	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.4.0">
 		<param name="APP_ID" value="1434579543483455" />
-		<param name="APP_NAME" value="Localhost Facebook Login" />
+		<param name="APP_NAME" value="¿Cura'o Manejo Mejor?" />
 	</gap:plugin>
-	<gap:platform name="android" />
-	<!--<gap:platform name="ios" />-->
 
-	<icon src="icon-128.png" />
+	<!-- ICONOS -->
+	<icon src="icon.png" />
 	<icon src="icon-128.png" width="128" height="128" />
 	<icon src="icon-256.png" width="256" height="256" gap:role="default" />
 
-	<!--
+	<!-- SPLASH SCREENS
 	<gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
 	<gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="res/screen/android/screen-mdpi-portrait.png" />
 	<gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="res/screen/android/screen-hdpi-portrait.png" />
 	<gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="res/screen/android/screen-xhdpi-portrait.png" />
 	-->
 
+	<!-- ACCESOS -->
 	<access origin="*" />
 </widget>
