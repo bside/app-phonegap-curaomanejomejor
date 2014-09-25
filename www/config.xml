@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<widget id="cl.brandon.curaomanejomejor" version="1.0.0"
+<widget id="cl.brandon.curaomanejomejor" version="1.0.1"
 		xmlns="http://www.w3.org/ns/widgets"
 		xmlns:gap="http://phonegap.com/ns/1.0"
 		xmlns:android   = "http://schemas.android.com/apk/res/android">
@@ -58,7 +58,7 @@
 	<gap:plugin name="org.apache.cordova.media" version="0.2.8" />
 	<gap:plugin name="org.apache.cordova.splashscreen" version="0.2.7" />
 	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.4.0">
-		<param name="APP_ID" value="1434579543483455" />
+		<param name="APP_ID" value="690669987676699" />
 		<param name="APP_NAME" value="¿Cura'o Manejo Mejor?" />
 	</gap:plugin>
 
