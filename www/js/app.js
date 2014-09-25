@@ -62,7 +62,7 @@ var app = {
 		this.watch();
 		FB.init(
 		{
-			appId				: '1434579543483455',
+			appId				: '690669987676699',
 			nativeInterface		: CDV.FB,
 			useCachedDialogs	: false,
 			status				: false
