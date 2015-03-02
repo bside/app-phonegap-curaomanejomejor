@@ -10,7 +10,7 @@
 	<author email="desarrollo@brandon.cl" href="http://brandon.cl">BrandOn | Inconsciente Digital</author>
 
 	<!-- GLOBAL -->
-	<preference name="phonegap-version" value="3.5.0" />
+	<preference name="phonegap-version" value="3.6.3" />
 	<preference name="orientation" value="portrait" />
 	<preference name="fullscreen" value="true" />
 	<preference name="permissions" value="none" />
