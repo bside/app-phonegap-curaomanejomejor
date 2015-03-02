@@ -59,10 +59,10 @@ var app = {
 	 */
 	init			: function()
 	{
-		this.watch();
+		app.watch();
 		FB.init(
 		{
-			appId				: '1434579543483455',
+			appId				: '690669987676699',
 			nativeInterface		: CDV.FB,
 			useCachedDialogs	: false,
 			status				: false
@@ -101,7 +101,7 @@ var app = {
 			if ( response.authResponse )
 			{
 				estado.logged			= 1;
-				this.info();
+				app.info();
 			}
 			else
 			{
@@ -130,7 +130,7 @@ var app = {
 			if ( response.status === 'connected' )
 			{
 				estado.logged			= 1;
-				this.info();
+				app.info();
 			}
 			else if ( response.status === 'not_authorized' )
 			{
@@ -242,7 +242,7 @@ var app = {
 		{
 			if ( typeof(obj[x]) === 'object' )
 			{
-				this.storage(obj[x], name + '.' + x);
+				app.storage(obj[x], name + '.' + x);
 			}
 			else
 			{
