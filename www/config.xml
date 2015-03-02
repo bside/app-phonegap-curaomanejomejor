@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<widget id="cl.brandon.curaomanejomejor" version="1.0.0"
+<widget id="cl.brandon.curaomanejomejor" version="2.0"
 		xmlns="http://www.w3.org/ns/widgets"
 		xmlns:gap="http://phonegap.com/ns/1.0"
-		xmlns:android   = "http://schemas.android.com/apk/res/android">
+		xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<!-- INFO APP -->
-	<name>¿Cura'o Manejo Mejor?</name>
-	<description>TomoElControl.cl - ¿Cura'o Manejo Mejor?</description>
+	<name>¿Curao Manejo Mejor?</name>
+	<description>TomoElControl.cl - ¿Curao Manejo Mejor?</description>
 	<author email="desarrollo@brandon.cl" href="http://brandon.cl">BrandOn | Inconsciente Digital</author>
 
 	<!-- GLOBAL -->
@@ -28,8 +28,8 @@
 	<!--<gap:platform name="ios" />-->
 
 	<!-- ANDROID -->
-	<preference name="android-minSdkVersion" value="14" />
-	<preference name="android-targetSdkVersion" value="17" />
+	<preference name="android-minSdkVersion" value="16" />
+	<preference name="android-targetSdkVersion" value="21" />
 	<supports-screens
 		android:anyDensity="true"
 		android:resizeable="true"
@@ -46,20 +46,23 @@
 	<preference name="prerendered-icon" value="true" />
 	<preference name="detect-data-types" value="false" />
 	<preference name="exit-on-suspend" value="true" />
-	<preference name="deployment-target" value="7.0" />
+	<preference name="deployment-target" value="8.0" />
 	<preference name="ios-statusbarstyle" value="black-opaque" />
+	<gap:config-file platform="ios" parent="UIStatusBarHidden"><true/></gap:config-file>
+	<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance"><false/></gap:config-file>
 	-->
 
 	<!-- PLUGINS -->
-	<gap:plugin name="org.apache.cordova.console" version="0.2.7" />
-	<gap:plugin name="org.apache.cordova.device" version="0.2.8" />
-	<gap:plugin name="org.apache.cordova.dialogs" version="0.2.6" />
-	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.3.3" />
-	<gap:plugin name="org.apache.cordova.media" version="0.2.8" />
-	<gap:plugin name="org.apache.cordova.splashscreen" version="0.2.7" />
-	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.4.0">
+	<feature name="http://api.phonegap.com/1.0/network"/>
+	<gap:plugin name="org.apache.cordova.console" version="0.2.11" />
+	<gap:plugin name="org.apache.cordova.device" version="0.2.12" />
+	<gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
+	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
+	<gap:plugin name="org.apache.cordova.media" version="0.2.13" />
+	<gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
+	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.9.0">
 		<param name="APP_ID" value="1434579543483455" />
-		<param name="APP_NAME" value="¿Cura'o Manejo Mejor?" />
+		<param name="APP_NAME" value="¿Curao Manejo Mejor?" />
 	</gap:plugin>
 
 	<!-- ICONOS -->
