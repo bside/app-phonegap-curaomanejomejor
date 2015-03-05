@@ -60,13 +60,13 @@ var app = {
 	init			: function()
 	{
 		this.watch();
-		FB.init(
-		{
-			appId				: '1434579543483455',
-			nativeInterface		: CDV.FB,
-			useCachedDialogs	: false,
-			status				: false
-		});
+		//FB.init(
+		//{
+		//	appId				: '1434579543483455',
+		//	nativeInterface		: CDV.FB,
+		//	useCachedDialogs	: false,
+		//	status				: false
+		//});
 		estado.init			= 1;
 	},
 
