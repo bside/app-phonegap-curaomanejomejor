@@ -75,6 +75,7 @@ var app = {
 	 */
 	bind			: function()
 	{
+		/*
 		FB.Event.subscribe('auth.statusChange', function()
 		{
 			estado.event.statusChange		= 1;
@@ -87,6 +88,7 @@ var app = {
 		{
 			estado.event.logout				= 1;
 		});
+		*/
 	},
 
 	/**
@@ -95,29 +97,18 @@ var app = {
 	login			: function(scope)
 	{
 		estado.loginPending			= 1;
-		//FB._nativeInterface.login(function(response)
-		FB.login(function(response)
+
+		facebookConnectPlugin.login(['email'], function(response)
 		{
-			if ( response.authResponse )
-			{
-				estado.logged			= 1;
-				this.info();
-			}
-			else
-			{
-				estado.loginCancel		= 1;
-			}
+			estado.logged			= 1;
 			estado.loginPending		= 0;
+			this.info();
 		},
+		function(error)
 		{
-			scope: scope || 'email'
-		}
-		/*,
-		function()
-		{
-			estado.loginCancel			= 1;
-			estado.loginPending			= 0;
-		}*/);
+			estado.loginCancel		= 1;
+			estado.loginPending		= 0;
+		});
 	},
 
 	/**
@@ -148,11 +139,7 @@ var app = {
 	 */
 	info			: function()
 	{
-		FB.api('/me',
-		{
-			fields		: 'id, name, first_name, last_name, email'
-		},
-		function(response)
+		facebookConnectPlugin.api('/me/?field=id,name,first_name,last_name,email', function(response)
 		{
 			if ( ! response || response.error )
 			{
@@ -183,7 +170,7 @@ var app = {
 	logout			: function()
 	{
 		estado.loggedOut		= 0;
-		FB.logout(function()
+		facebookConnectPlugin.logout(function()
 		{
 			estado.loggedOut		= 1;
 		});
@@ -194,7 +181,7 @@ var app = {
 	 */
 	share			: function(name, description)
 	{
-		FB._nativeInterface.dialog(
+		facebookConnectPlugin.showDialog(
 		{
 			method			: 'feed',
 			name			: name || '-',
@@ -203,23 +190,6 @@ var app = {
 			link			: 'http://google.cl',
 			picture			: 'http://placehold.it/200x200'
 		});
-		/*
-		,function(response)
-		{
-			if ( ! response || response.error )
-			{
-				app.debug('Error al obetener datos de usuario');
-			}
-			else
-			{
-				app.debug('Share OK');
-			}
-		},
-		function()
-		{
-			app.debug('Error al compartir.');
-		});
-		*/
 	},
 
 	/**
