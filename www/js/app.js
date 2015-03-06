@@ -139,7 +139,7 @@ var app = {
 	 */
 	info			: function()
 	{
-		facebookConnectPlugin.api('/me/?field=id,name,first_name,last_name,email', function(response)
+		facebookConnectPlugin.api('/me/?field=id,name,first_name,last_name,email', [], function(response)
 		{
 			if ( ! response || response.error )
 			{
