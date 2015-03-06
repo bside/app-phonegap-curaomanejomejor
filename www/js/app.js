@@ -102,7 +102,7 @@ var app = {
 		{
 			estado.logged			= 1;
 			estado.loginPending		= 0;
-			this.info();
+			app.info();
 		},
 		function(error)
 		{
@@ -121,7 +121,7 @@ var app = {
 			if ( response.status === 'connected' )
 			{
 				estado.logged			= 1;
-				this.info();
+				app.info();
 			}
 			else if ( response.status === 'not_authorized' )
 			{
