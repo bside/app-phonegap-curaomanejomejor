@@ -16,12 +16,10 @@
 	<preference name="permissions" value="none" />
 
 	<!-- DEBUG -->
-	<!--
 	<feature name="debug-server" required="true">
-		<param name="domain" value="http://192.168.2.199:8080" />
+		<param name="domain" value="http://192.168.2.200:1337" />
 		<param name="key" value="anonymous" />
 	</feature>
-	-->
 
 	<!-- PLATAFORMAS -->
 	<gap:platform name="android" />
@@ -54,11 +52,13 @@
 
 	<!-- PLUGINS -->
 	<feature name="http://api.phonegap.com/1.0/network"/>
+	<!--
 	<gap:plugin name="org.apache.cordova.console" version="0.2.11" />
 	<gap:plugin name="org.apache.cordova.device" version="0.2.12" />
 	<gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
-	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
 	<gap:plugin name="org.apache.cordova.media" version="0.2.13" />
+	-->
+	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
 	<gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
 	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.9.0">
 		<param name="APP_ID" value="1434579543483455" />
@@ -66,9 +66,12 @@
 	</gap:plugin>
 
 	<!-- ICONOS -->
-	<icon src="icon.png" />
-	<icon src="icon-128.png" width="128" height="128" />
-	<icon src="icon-256.png" width="256" height="256" gap:role="default" />
+	<icon src="img/icon/icon.png" />
+	<icon src="img/icon/icon-16.png" width="16" height="16" />
+	<icon src="img/icon/icon-32.png" width="32" height="32" />
+	<icon src="img/icon/icon-114.png" width="114" height="114" />
+	<icon src="img/icon/icon-128.png" width="128" height="128" />
+	<icon src="img/icon/icon-256.png" width="256" height="256" gap:role="default" />
 
 	<!-- SPLASH SCREENS
 	<gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
