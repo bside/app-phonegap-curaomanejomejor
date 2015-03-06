@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<widget id="cl.brandon.curaomanejomejor" version="2.0"
+<widget id="cl.brandon.curaomanejomejor" version="2.1"
 		xmlns="http://www.w3.org/ns/widgets"
 		xmlns:gap="http://phonegap.com/ns/1.0"
 		xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<!-- INFO APP -->
 	<name>¿Curao Manejo Mejor?</name>
-	<description>TomoElControl.cl - ¿Curao Manejo Mejor?</description>
+	<description>Juego para la Fundación Parentesis</description>
 	<author email="desarrollo@brandon.cl" href="http://brandon.cl">BrandOn | Inconsciente Digital</author>
 
 	<!-- GLOBAL -->
@@ -61,7 +61,7 @@
 	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
 	<gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
 	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.9.0">
-		<param name="APP_ID" value="1434579543483455" />
+		<param name="APP_ID" value="690669987676699" />
 		<param name="APP_NAME" value="¿Curao Manejo Mejor?" />
 	</gap:plugin>
 
