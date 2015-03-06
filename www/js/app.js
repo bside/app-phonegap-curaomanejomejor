@@ -116,7 +116,7 @@ var app = {
 	 */
 	loginStatus		: function()
 	{
-		FB.getLoginStatus(function(response)
+		facebookConnectPlugin.getLoginStatus(function(response)
 		{
 			if ( response.status === 'connected' )
 			{

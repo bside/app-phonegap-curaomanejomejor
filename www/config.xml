@@ -16,10 +16,12 @@
 	<preference name="permissions" value="none" />
 
 	<!-- DEBUG -->
+	<!--
 	<feature name="debug-server" required="true">
 		<param name="domain" value="http://192.168.2.200:1337" />
 		<param name="key" value="anonymous" />
 	</feature>
+	-->
 
 	<!-- PLATAFORMAS -->
 	<gap:platform name="android" />
