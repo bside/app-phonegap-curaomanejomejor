@@ -54,12 +54,10 @@
 
 	<!-- PLUGINS -->
 	<feature name="http://api.phonegap.com/1.0/network" />
-	<!--
+	<gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
 	<gap:plugin name="org.apache.cordova.console" version="0.2.11" />
 	<gap:plugin name="org.apache.cordova.device" version="0.2.12" />
-	<gap:plugin name="org.apache.cordova.dialogs" version="0.2.10" />
 	<gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />
-	-->
 	<gap:plugin name="org.apache.cordova.media" version="0.2.13" />
 	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
 	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.9.0">
